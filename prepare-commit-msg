@@ -7,7 +7,7 @@ COMMIT_MSG_FILE=$1
 TODAYS_DATE=$(date +%Y-%m-%d)
 
 # Read the project name from an environment variable:
-PROJECT_NAME=${awk -F'[=]' '{print $2}' .env}
+PROJECT_NAME=$(awk -F'[=]' '{print $2}' .env)
 
 # Prepend the date and project name to the commit message:
 echo "[ ${PROJECT_NAME} ] — [ ${TODAYS_DATE} ]: $(cat ${COMMIT_MSG_FILE})" > ${COMMIT_MSG_FILE}
