@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# The path to the commit message file is given as the first argument:
+COMMIT_MSG_FILE=$1
+
+# Get today's date in YYYY-MM-DD format:
+TODAYS_DATE=$(date +%Y-%m-%d)
+
+# Read the project name from an environment variable:
+PROJECT_NAME=${PROJECT_NAME}
+
+# You could also hardcode the project name like this if you prefer:
+# PROJECT_NAME="MyAwesomeProject"
+
+# Prepend the date and project name to the commit message:
+echo "[ ${PROJECT_NAME} ] —[ ${TODAYS_DATE} ]: $(cat ${COMMIT_MSG_FILE})" > ${COMMIT_MSG_FILE}
